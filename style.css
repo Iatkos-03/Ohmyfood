@@ -1,0 +1,15 @@
+/*GENERAL*/
+* {
+    box-sizing: border-box;
+   
+}
+body {
+    margin: 0px;
+}
+
+header {
+    font-family: 'Shrikhand', cursive ;
+    text-align: center;
+    box-shadow: 0 0 0.5rem grey;
+    padding: 0.3rem;
+}
