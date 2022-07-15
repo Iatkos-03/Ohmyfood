@@ -1,0 +1,51 @@
+@use "../utils/Zoom";
+@use "../utils/box-shadow";
+@use "../utils/variable" ;
+@use "..//utils/color";
+
+.tuto {
+    counter-reset: steps;
+    & ol {
+        display: flex;
+        gap: 32px;
+        @media (max-width: 1000px) {
+        flex-direction: column;   
+        }
+    }
+    & li {
+        position: relative;
+        &::before {
+            content: counter(steps);
+            counter-increment: steps;
+            color: #f6f6f6;
+            background: color.$violet;
+            border-radius: 8px;
+            width: 2 * variable.$base-hauteur;
+            height: 2 * variable.$base-hauteur;
+            display: grid;
+            bottom: variable.$base-hauteur;
+            left: -1 * variable.$base-hauteur;
+            place-items: center;
+            border-radius: 50%;
+            position: absolute;
+
+        }
+        background-color: #f6f6f6;
+        border: 1px solid;
+        padding: 24px 32px;
+        flex-grow: 1;
+        list-style-type: none;
+        @include box-shadow.base-shadow;/*  */
+        &:hover{
+            @include Zoom.Zoom;
+        }
+        & i.fas {
+            margin-right: 16px;
+            color: color.$grisclair;
+            font-size: 24px;
+        }
+        border-radius: 16px;
+    }
+
+
+}
