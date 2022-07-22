@@ -1,0 +1,67 @@
+@use "../utils/mixin";
+@use "../utils/variable";
+@use "../utils/color";
+
+.banner img {
+    display: block;
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    object-position: center bottom;
+    
+}
+.titre_resto {
+    margin-top: -32px;
+    h2 {
+    font-family: "Shrikhand", "sans-serif";
+    padding: 16px 8px;
+    @include mixin.animation-coeur;
+    background-color: color.$grisdetailmenu;
+    border-radius: 32px 32px 0 0;
+    }
+}
+.main_resto {
+    padding:0 16px;
+    background-color: color.$grisdetailmenu;
+}
+.grille_menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    background-color: color.$grisdetailmenu;
+    @media (max-width: variable.$break) {
+        grid-template-columns: 1fr;
+        
+    }
+    .menu_Entrees_plats_desserts {
+        background-color: white;
+        border-radius: 16px;
+        .menu_detail {
+        display: flex;
+        overflow: hidden;
+        }
+        .menu_prix {
+            margin-left: auto;
+            font-weight: bold;
+            display: flex;
+           align-items: flex-end;
+           padding: 16px;
+        }
+        .menu_plus_detail {
+            padding: 16px;
+        }
+        .menu_bouton_check {
+            background-color: color.$tertiare;
+            margin-right: -64px;
+            border-radius: 0 16px 16px 0;
+            width: 64px;
+            transition: margin-right 0.5s;
+        }
+        &:hover .menu_bouton_check {
+            margin-right: 0;
+        }
+    }
+}
+   
+
+

@@ -1,23 +1,22 @@
-@use "../utils/box-shadow.scss";
+@use "../utils/mixin";
 
 .bloc_explorez {
     text-align: center;
     & h2 {
-    margin-top: 32px;
     font-size: 32px;
     }
     & p {
     font-size: 16px;
     }
     & button {
-    background-image: linear-gradient(rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
     color: white;
     font-weight: bold;
     font-size: 24px;
     padding: 16px 32px;
     border-radius: 32px;
     border: none;
-    @include box-shadow.base-shadow;
+    @include mixin.base-shadow;
+    @include mixin.gradient;
     transition: transform 220ms;
     margin-top: 16px;
     }

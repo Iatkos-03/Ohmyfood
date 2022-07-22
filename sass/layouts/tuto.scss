@@ -1,10 +1,10 @@
-@use "../utils/Zoom";
-@use "../utils/box-shadow";
+@use "../utils/mixin";
 @use "../utils/variable" ;
 @use "..//utils/color";
 
 .tuto {
     counter-reset: steps;
+    margin-bottom: 32px;
     & ol {
         display: flex;
         gap: 32px;
@@ -23,11 +23,12 @@
             width: 2 * variable.$base-hauteur;
             height: 2 * variable.$base-hauteur;
             display: grid;
-            bottom: variable.$base-hauteur;
+            bottom: 50%;
             left: -1 * variable.$base-hauteur;
             place-items: center;
             border-radius: 50%;
             position: absolute;
+            transform: translateY(+50%);
 
         }
         background-color: #f6f6f6;
@@ -35,9 +36,9 @@
         padding: 24px 32px;
         flex-grow: 1;
         list-style-type: none;
-        @include box-shadow.base-shadow;/*  */
+        @include mixin.base-shadow;/*  */
         &:hover{
-            @include Zoom.Zoom;
+            @include mixin.Zoom;
         }
         & i.fas {
             margin-right: 16px;
