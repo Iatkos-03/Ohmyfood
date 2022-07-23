@@ -330,11 +330,12 @@ footer p {
 }
 .grille_menu .menu_Entrees_plats_desserts {
   background-color: white;
-  border-radius: 16px;
 }
 .grille_menu .menu_Entrees_plats_desserts .menu_detail {
   display: flex;
   overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 2px 1px 8px -3px black;
 }
 .grille_menu .menu_Entrees_plats_desserts .menu_prix {
   margin-left: auto;
@@ -351,10 +352,28 @@ footer p {
   margin-right: -64px;
   border-radius: 0 16px 16px 0;
   width: 64px;
-  transition: margin-right 0.5s;
+  transition: margin-right 0.8s;
+  display: grid;
+  place-items: center;
+}
+.grille_menu .menu_Entrees_plats_desserts .menu_bouton_check i {
+  color: white;
 }
 .grille_menu .menu_Entrees_plats_desserts:hover .menu_bouton_check {
   margin-right: 0;
+  cursor: pointer;
+}
+.grille_menu .menu_Entrees_plats_desserts:hover i {
+  animation-duration: 1s;
+  animation-name: animationcercle;
+}
+@keyframes animationcercle {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
 
 /*GENERAL*/

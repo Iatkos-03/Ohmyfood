@@ -1,6 +1,7 @@
 @use "../utils/mixin";
 @use "../utils/variable";
 @use "../utils/color";
+@use "../utils/animation";
 
 .banner img {
     display: block;
@@ -35,17 +36,18 @@
     }
     .menu_Entrees_plats_desserts {
         background-color: white;
-        border-radius: 16px;
         .menu_detail {
-        display: flex;
-        overflow: hidden;
+            display: flex;
+            overflow: hidden;
+            border-radius: 16px;
+            @include mixin.base-shadow;
         }
         .menu_prix {
             margin-left: auto;
             font-weight: bold;
             display: flex;
-           align-items: flex-end;
-           padding: 16px;
+            align-items: flex-end;
+            padding: 16px;
         }
         .menu_plus_detail {
             padding: 16px;
@@ -55,13 +57,27 @@
             margin-right: -64px;
             border-radius: 0 16px 16px 0;
             width: 64px;
-            transition: margin-right 0.5s;
+            transition: margin-right 0.8s;
+            display: grid;
+            place-items: center;
+            i {
+                color: white;
+            }
         }
-        &:hover .menu_bouton_check {
+        &:hover {
+        .menu_bouton_check {
             margin-right: 0;
+            cursor: pointer; 
+        }
+        i {
+            animation-duration: 1s;
+            animation-name: animationcercle;
+            @include animation.cercle;
+            }
         }
     }
 }
+
    
 
 
