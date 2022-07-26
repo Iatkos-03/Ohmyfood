@@ -9,20 +9,7 @@
     font-size: 16px;
     }
     & button {
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    padding: 16px 32px;
-    border-radius: 32px;
-    border: none;
-    @include mixin.base-shadow;
-    @include mixin.gradient;
-    transition: transform 220ms;
-    margin-top: 16px;
-    }
-    & button:hover {
-    transform: scale(1.01);
-    opacity: 1;
+      @include mixin.boutonuniversal;
     }
   }
   

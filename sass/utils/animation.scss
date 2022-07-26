@@ -1,11 +1,8 @@
-@mixin cercle {
-    
-    @keyframes animationcercle {
-        0% {
-            transform: rotate(-270deg);
-        }
-        100% {
-            transform: rotate(0);
-        }
+@keyframes apparition {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
     }
 }

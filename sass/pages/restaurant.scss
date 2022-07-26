@@ -3,6 +3,23 @@
 @use "../utils/color";
 @use "../utils/animation";
 
+body {
+    background-color: color.$grisdetailmenu;
+}
+.reglage_nav {
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+header {
+    position: relative;
+    i {
+        position: absolute;
+        left: 16px;
+        bottom: 36px;
+        
+        
+    }
+}
 .banner img {
     display: block;
     width: 100%;
@@ -23,7 +40,16 @@
 }
 .main_resto {
     padding:0 16px;
-    background-color: color.$grisdetailmenu;
+}
+section.commander {
+    height: 30vh;
+    display: grid;
+    place-items: center;
+    
+    & button {
+        @include mixin.boutonuniversal;
+        margin-top: -40px;
+    }
 }
 .grille_menu {
     display: grid;
@@ -32,52 +58,94 @@
     background-color: color.$grisdetailmenu;
     @media (max-width: variable.$break) {
         grid-template-columns: 1fr;
-        
+    }
+    h3 {
+        font-weight: 300;
+        position: relative;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        left: 16px;
+        &::after {
+            content: "";
+            height: 4px;
+            width: 48px;
+            background-color: color.$tertiare;
+            position: absolute;
+            top: 28px;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    p {
+        font-weight: 100;
+    }
+    h4 {
+        font-weight: 900;
     }
     .menu_Entrees_plats_desserts {
-        background-color: white;
-        .menu_detail {
+        overflow: hidden;
+        
+    }
+    .menu_detail {
+            @for $i from 1 to 3 {
+                &:nth-child(#{$i}) {
+                    animation-delay: 100ms * $i;
+                }
             display: flex;
-            overflow: hidden;
+            background-color: white;
             border-radius: 16px;
+            overflow: hidden;
+            margin: 8px;
             @include mixin.base-shadow;
-        }
-        .menu_prix {
-            margin-left: auto;
-            font-weight: bold;
-            display: flex;
-            align-items: flex-end;
-            padding: 16px;
-        }
-        .menu_plus_detail {
-            padding: 16px;
-        }
-        .menu_bouton_check {
-            background-color: color.$tertiare;
-            margin-right: -64px;
-            border-radius: 0 16px 16px 0;
-            width: 64px;
-            transition: margin-right 0.8s;
-            display: grid;
-            place-items: center;
-            i {
-                color: white;
+            animation: apparition 2s;
+            animation-fill-mode: both;
+            animation-delay: 1s;
+            .menu_prix {
+                margin-left: auto;
+                font-weight: bold;
+                display: flex;
+                align-items: flex-end;
+                padding: 16px;
+            }
+            .menu_plus_detail {
+                overflow: hidden;
+                padding: 16px;
+                h4,
+                p {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+            .menu_bouton_check {
+                background-color: color.$tertiare;
+                margin-right: -64px;
+                border-radius: 0 16px 16px 0;
+                width: 64px;
+                transition: margin-right 0.8s;
+                display: grid;
+                flex-shrink: 0;
+                place-items: center;
+                i {
+                    color: white;
+                }
+                
             }
         }
         &:hover {
-        .menu_bouton_check {
-            margin-right: 0;
             cursor: pointer; 
-        }
-        i {
-            animation-duration: 1s;
-            animation-name: animationcercle;
-            @include animation.cercle;
+            .menu_bouton_check {
+                margin-right: 0;
+            }
+            i {
+                animation-duration: 1s;
+                animation-name: animationcercle;
+                @include mixin.cercle;
             }
         }
     }
 }
 
-   
+
 
 

@@ -70,10 +70,11 @@ header {
   padding: 16px 32px;
   border-radius: 32px;
   border: none;
-  box-shadow: 2px 1px 8px -3px black;
+  box-shadow: 2px 1px 8px -3px #7e7e7e;
   background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
   transition: transform 220ms;
   margin-top: 16px;
+  cursor: pointer;
 }
 .bloc_explorez button:hover {
   transform: scale(1.01);
@@ -100,7 +101,7 @@ header {
   padding: 24px 32px;
   flex-grow: 1;
   list-style-type: none;
-  box-shadow: 2px 1px 8px -3px black;
+  box-shadow: 2px 1px 8px -3px #7e7e7e;
   /*  */
   border-radius: 16px;
 }
@@ -245,6 +246,32 @@ footer p {
   padding: 3px;
 }
 
+@keyframes apparition {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+body {
+  background-color: #F6F6F6;
+}
+
+.reglage_nav {
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+header {
+  position: relative;
+}
+header i {
+  position: absolute;
+  left: 16px;
+  bottom: 36px;
+}
+
 .banner img {
   display: block;
   width: 100%;
@@ -314,7 +341,30 @@ footer p {
 
 .main_resto {
   padding: 0 16px;
-  background-color: #F6F6F6;
+}
+
+section.commander {
+  height: 30vh;
+  display: grid;
+  place-items: center;
+}
+section.commander button {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 16px 32px;
+  border-radius: 32px;
+  border: none;
+  box-shadow: 2px 1px 8px -3px #7e7e7e;
+  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
+  transition: transform 220ms;
+  margin-top: 16px;
+  cursor: pointer;
+  margin-top: -40px;
+}
+section.commander button:hover {
+  transform: scale(1.01);
+  opacity: 1;
 }
 
 .grille_menu {
@@ -328,42 +378,125 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
+.grille_menu h3 {
+  font-weight: 300;
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  left: 16px;
+}
+.grille_menu h3::after {
+  content: "";
+  height: 4px;
+  width: 48px;
+  background-color: #99E2D0;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  bottom: 0;
+}
+.grille_menu p {
+  font-weight: 100;
+}
+.grille_menu h4 {
+  font-weight: 900;
+}
 .grille_menu .menu_Entrees_plats_desserts {
-  background-color: white;
-}
-.grille_menu .menu_Entrees_plats_desserts .menu_detail {
-  display: flex;
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 2px 1px 8px -3px black;
 }
-.grille_menu .menu_Entrees_plats_desserts .menu_prix {
+.grille_menu .menu_detail {
+  display: flex;
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 8px;
+  box-shadow: 2px 1px 8px -3px #7e7e7e;
+  animation: apparition 2s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+  display: flex;
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 8px;
+  box-shadow: 2px 1px 8px -3px #7e7e7e;
+  animation: apparition 2s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+}
+.grille_menu .menu_detail:nth-child(1) {
+  animation-delay: 100ms;
+}
+.grille_menu .menu_detail .menu_prix {
   margin-left: auto;
   font-weight: bold;
   display: flex;
   align-items: flex-end;
   padding: 16px;
 }
-.grille_menu .menu_Entrees_plats_desserts .menu_plus_detail {
+.grille_menu .menu_detail .menu_plus_detail {
+  overflow: hidden;
   padding: 16px;
 }
-.grille_menu .menu_Entrees_plats_desserts .menu_bouton_check {
+.grille_menu .menu_detail .menu_plus_detail h4,
+.grille_menu .menu_detail .menu_plus_detail p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.grille_menu .menu_detail .menu_bouton_check {
   background-color: #99E2D0;
   margin-right: -64px;
   border-radius: 0 16px 16px 0;
   width: 64px;
   transition: margin-right 0.8s;
   display: grid;
+  flex-shrink: 0;
   place-items: center;
 }
-.grille_menu .menu_Entrees_plats_desserts .menu_bouton_check i {
+.grille_menu .menu_detail .menu_bouton_check i {
   color: white;
 }
-.grille_menu .menu_Entrees_plats_desserts:hover .menu_bouton_check {
-  margin-right: 0;
+.grille_menu .menu_detail:nth-child(2) {
+  animation-delay: 200ms;
+}
+.grille_menu .menu_detail .menu_prix {
+  margin-left: auto;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+.grille_menu .menu_detail .menu_plus_detail {
+  overflow: hidden;
+  padding: 16px;
+}
+.grille_menu .menu_detail .menu_plus_detail h4,
+.grille_menu .menu_detail .menu_plus_detail p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.grille_menu .menu_detail .menu_bouton_check {
+  background-color: #99E2D0;
+  margin-right: -64px;
+  border-radius: 0 16px 16px 0;
+  width: 64px;
+  transition: margin-right 0.8s;
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+}
+.grille_menu .menu_detail .menu_bouton_check i {
+  color: white;
+}
+.grille_menu .menu_detail:hover {
   cursor: pointer;
 }
-.grille_menu .menu_Entrees_plats_desserts:hover i {
+.grille_menu .menu_detail:hover .menu_bouton_check {
+  margin-right: 0;
+}
+.grille_menu .menu_detail:hover i {
   animation-duration: 1s;
   animation-name: animationcercle;
 }
