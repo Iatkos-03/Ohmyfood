@@ -41,7 +41,7 @@ header {
 .main_resto {
     padding:0 16px;
 }
-section.commander {
+div.commander {
     height: 30vh;
     display: grid;
     place-items: center;
@@ -89,7 +89,7 @@ section.commander {
     .menu_detail {
             @for $i from 1 to 3 {
                 &:nth-child(#{$i}) {
-                    animation-delay: 100ms * $i;
+                    animation-delay: 300ms * $i;
                 }
             display: flex;
             background-color: white;

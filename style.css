@@ -53,15 +53,24 @@ header {
   justify-content: center;
   padding: 8px;
 }
+.Villes i {
+  font-size: 20px;
+}
+.Villes h2 {
+  font-size: 20px;
+}
 
 .bloc_explorez {
   text-align: center;
+  margin: 36px;
 }
 .bloc_explorez h2 {
-  font-size: 32px;
+  font-size: 24px;
+  margin: 16px;
 }
 .bloc_explorez p {
   font-size: 16px;
+  margin-top: 16px;
 }
 .bloc_explorez button {
   color: white;
@@ -75,12 +84,38 @@ header {
   transition: transform 220ms;
   margin-top: 16px;
   cursor: pointer;
+  font-size: 20px;
 }
 .bloc_explorez button:hover {
   transform: scale(1.01);
   opacity: 1;
 }
 
+.chargement {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  animation: chargement_site 100ms 1s both;
+  transform-origin: top right;
+}
+
+.couleur {
+  color: #353535;
+}
+
+@keyframes chargement_site {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
 .tuto {
   counter-reset: steps;
   margin-bottom: 32px;
@@ -122,7 +157,7 @@ header {
   transform: translateY(50%);
 }
 .tuto li:hover {
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
 .tuto li i.fas {
   margin-right: 16px;
@@ -254,6 +289,14 @@ footer p {
     transform: scale(1);
   }
 }
+@keyframes chargement_site {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    visibility: hidden;
+  }
+}
 body {
   background-color: #F6F6F6;
 }
@@ -343,12 +386,12 @@ header i {
   padding: 0 16px;
 }
 
-section.commander {
+div.commander {
   height: 30vh;
   display: grid;
   place-items: center;
 }
-section.commander button {
+div.commander button {
   color: white;
   font-weight: bold;
   font-size: 24px;
@@ -362,7 +405,7 @@ section.commander button {
   cursor: pointer;
   margin-top: -40px;
 }
-section.commander button:hover {
+div.commander button:hover {
   transform: scale(1.01);
   opacity: 1;
 }
@@ -425,7 +468,7 @@ section.commander button:hover {
   animation-delay: 1s;
 }
 .grille_menu .menu_detail:nth-child(1) {
-  animation-delay: 100ms;
+  animation-delay: 300ms;
 }
 .grille_menu .menu_detail .menu_prix {
   margin-left: auto;
@@ -458,7 +501,7 @@ section.commander button:hover {
   color: white;
 }
 .grille_menu .menu_detail:nth-child(2) {
-  animation-delay: 200ms;
+  animation-delay: 600ms;
 }
 .grille_menu .menu_detail .menu_prix {
   margin-left: auto;
