@@ -4,10 +4,14 @@
   "description": "Projet 3 Ohmyfood",
   "main": "index.js",
   "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0",
     "sass": "^1.53.0"
   },
   "scripts": {
-    "sass": "sass --watch style.scss style.css"
+    "sass": "sass --watch style.scss style.css",
+    "build": "postcss style.css -u autoprefixer -o ./build_postcss/style.construction_postcss.css"
   },
   "repository": {
     "type": "git",
