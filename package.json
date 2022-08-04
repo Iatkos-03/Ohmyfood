@@ -10,7 +10,7 @@
     "sass": "^1.53.0"
   },
   "scripts": {
-    "sass": "sass --watch style.scss style.css",
+    "sass": "sass --watch style.scss:./css/style.css",
     "build": "postcss style.css -u autoprefixer -o ./build_postcss/style.construction_postcss.css"
   },
   "repository": {
